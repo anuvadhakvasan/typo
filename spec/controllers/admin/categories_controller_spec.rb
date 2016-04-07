@@ -15,6 +15,15 @@ describe Admin::CategoriesController do
     get :index
     assert_response :redirect, :action => 'index'
   end
+  
+  describe "test_new" do
+    
+    it 'should render template new' do
+      get :new
+      assert_template 'new'
+      assert_tag :tag => "table"
+    end
+  end  
 
   describe "test_edit" do
     before(:each) do
